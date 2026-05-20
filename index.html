@@ -3,38 +3,76 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>chronosirius — Portfolio</title>
+    <title>chronosirius — Personal Portfolio</title>
     <style>
       :root {
-        color-scheme: dark light;
+        color-scheme: dark;
+        --bg: #0a0d14;
+        --card: #121826;
+        --text: #e6ecff;
+        --muted: #b4bfdc;
+        --accent: #8ab4ff;
+        --border: #243049;
       }
       body {
         font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
         margin: 0;
-        line-height: 1.5;
+        line-height: 1.6;
+        background: radial-gradient(1200px 800px at 20% -10%, #1a2742 0%, var(--bg) 50%);
+        color: var(--text);
       }
       main {
-        max-width: 900px;
+        max-width: 980px;
         margin: 0 auto;
-        padding: 2rem 1rem 3rem;
+        padding: 2.25rem 1rem 3rem;
       }
-      h1, h2 {
-        margin-bottom: 0.25rem;
+      h1,
+      h2 {
+        margin: 0 0 0.35rem;
+      }
+      h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
       }
       section {
-        margin-top: 1.5rem;
-      }
-      .muted {
-        opacity: 0.8;
+        margin-top: 1.25rem;
+        background: color-mix(in oklab, var(--card) 92%, black);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 1rem 1.1rem;
       }
       ul {
         padding-left: 1.2rem;
+        margin: 0.6rem 0;
       }
       li + li {
-        margin-top: 0.5rem;
+        margin-top: 0.6rem;
       }
-      code {
-        font-size: 0.95em;
+      p {
+        margin: 0.35rem 0 0.6rem;
+      }
+      a {
+        color: var(--accent);
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .eyebrow {
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 0.2rem;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 0.85rem;
+      }
+      .project {
+        background: color-mix(in oklab, var(--card) 90%, black);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 0.85rem;
       }
     </style>
   </head>
@@ -42,55 +80,102 @@
     <main>
       <header>
         <h1>chronosirius</h1>
-        <p class="muted">
-          Public portfolio built from publicly available internet sources.
+        <p class="muted">I build software projects across web, Python tooling, and Android.</p>
+        <p>
+          I’m @chronosirius on GitHub. Most of my public work is code-first and experimental:
+          I build, ship, and iterate in public.
         </p>
       </header>
 
       <section>
-        <h2>About</h2>
+        <p class="eyebrow">About me</p>
+        <h2>How I describe my work</h2>
         <ul>
-          <li>GitHub: <a href="https://github.com/chronosirius">github.com/chronosirius</a></li>
-          <li>Public profile summary: “Hi, I’m @chronosirius”, interested in coding.</li>
-          <li>Profile also mentions: Amador Valley High School.</li>
+          <li>I’m interested in coding and building practical projects from scratch.</li>
+          <li>My public profile: <a href="https://github.com/chronosirius">github.com/chronosirius</a>.</li>
+          <li>Profile bio context includes Amador Valley High School.</li>
         </ul>
       </section>
 
       <section>
-        <h2>Selected Public Repositories</h2>
-        <ul>
-          <li><a href="https://github.com/chronosirius/mycrud">mycrud</a> — JavaScript project.</li>
-          <li><a href="https://github.com/chronosirius/chv">chv</a> — active HTML repository.</li>
-          <li><a href="https://github.com/chronosirius/gemini-pages">gemini-pages</a> — HTML project for pages from research.</li>
-          <li><a href="https://github.com/chronosirius/nosql-db-client">nosql-db-client</a> — Python client project.</li>
-          <li><a href="https://github.com/chronosirius/discordself">discordself</a> — Kotlin library.</li>
-        </ul>
+        <p class="eyebrow">Featured work</p>
+        <h2>Projects I’m actively proud of</h2>
+        <div class="grid">
+          <article class="project">
+            <h3><a href="https://github.com/chronosirius/chv">chv</a></h3>
+            <p>
+              I built this as an Instagram direct-message analytics web app. It handles ZIP upload,
+              generates conversation stats, tracks messaging behavior patterns, and visualizes insights.
+            </p>
+          </article>
+          <article class="project">
+            <h3><a href="https://github.com/chronosirius/mycrud">mycrud</a></h3>
+            <p>
+              My CRUD-style database web interface built with Flask and Python. It includes login,
+              schema-aware table views, row editing APIs, and tools for foreign-key and relation flows.
+            </p>
+          </article>
+          <article class="project">
+            <h3><a href="https://github.com/chronosirius/nosql-db-client">nosql-db-client</a></h3>
+            <p>
+              A lightweight NoSQL client project. The repository README frames it as a simpler path
+              when full SQL workflows feel too heavy.
+            </p>
+          </article>
+          <article class="project">
+            <h3><a href="https://github.com/chronosirius/discordself">discordself</a></h3>
+            <p>
+              A Kotlin Discord selfbot library project written for reuse, including as part of my
+              Android Discord client effort.
+            </p>
+          </article>
+          <article class="project">
+            <h3><a href="https://github.com/chronosirius/gemini-pages">gemini-pages</a></h3>
+            <p>
+              A small GitHub Pages experiment focused on publishing long-form pages generated from
+              deep research outputs.
+            </p>
+          </article>
+        </div>
       </section>
 
       <section>
-        <h2><code>chronosirius-android</code> Organization Highlights</h2>
+        <p class="eyebrow">Organization work</p>
+        <h2>What I’m building in <code>chronosirius-android</code></h2>
         <ul>
           <li>
-            <a href="https://github.com/chronosirius-android/Accordion">Accordion</a> — Android Discord client in Kotlin.
-            Public prerelease tag:
+            <a href="https://github.com/chronosirius-android/Accordion">Accordion</a> is my Android
+            Discord client written for a native feel, including Android-first features such as bubbles
+            and richer notifications. I published a public prerelease:
             <a href="https://github.com/chronosirius-android/Accordion/releases/tag/v1.0.0-alpha">v1.0.0-alpha</a>.
           </li>
-          <li><a href="https://github.com/chronosirius-android/external_owl">external_owl</a> — AWDL implementation patching work (C).</li>
-          <li><a href="https://github.com/chronosirius-android/external_libev">external_libev</a> — libev dependency for Android work (C).</li>
-          <li><a href="https://github.com/chronosirius-android/vendor_csx">vendor_csx</a> — custom vendor files.</li>
+          <li>
+            <a href="https://github.com/chronosirius-android/external_owl">external_owl</a> contains
+            my Android patching work around OWL (Open Wireless Link / AWDL implementation in C).
+          </li>
+          <li>
+            <a href="https://github.com/chronosirius-android/external_libev">external_libev</a> is my
+            companion dependency packaging for OWL-related Android builds.
+          </li>
+          <li>
+            <a href="https://github.com/chronosirius-android/vendor_csx">vendor_csx</a> is where I keep
+            my own Android vendor-file work.
+          </li>
         </ul>
       </section>
 
       <section>
-        <h2>Internet Presence</h2>
+        <p class="eyebrow">Presence</p>
+        <h2>Where to find me online</h2>
         <p>
-          From publicly verifiable sources, the primary discoverable presence is GitHub and related repositories/releases.
-          No additional strongly verifiable public profiles were identified in this pass.
+          My strongest public footprint is GitHub: repositories, releases, and organization work.
+          I’m intentionally keeping this portfolio focused on sources that are directly verifiable.
         </p>
       </section>
 
       <section>
-        <h2>Data Sources</h2>
+        <p class="eyebrow">Sources</p>
+        <h2>References</h2>
         <ul>
           <li><a href="https://github.com/chronosirius">chronosirius GitHub profile</a></li>
           <li><a href="https://github.com/chronosirius?tab=repositories">chronosirius repositories</a></li>
